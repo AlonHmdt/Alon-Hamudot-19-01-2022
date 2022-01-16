@@ -15,7 +15,7 @@ import {CityForecastEffects} from './effects/city-forecast.effects';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

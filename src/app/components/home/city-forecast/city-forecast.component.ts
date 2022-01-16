@@ -127,11 +127,4 @@ export class CityForecastComponent implements OnInit {
     console.log(this.cityForecast);
   }
 
-  public padLeadingZeros(num, size) { // change to pipe
-    let s = num + '';
-    while (s.length < size) {
-      s = '0' +  s;
-      return s;
-    }
-  }
 }

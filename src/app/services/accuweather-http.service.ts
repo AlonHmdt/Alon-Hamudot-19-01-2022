@@ -1,24 +1,23 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {map} from "rxjs/operators";
-import {City} from "../models/city.model";
-import {CityForecast} from "../models/city-forecast.model";
-import {CityCurrentWeather} from "../models/city-current-weather.model";
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {City} from '../models/city.model';
+import {CityForecast} from '../models/city-forecast.model';
+import {CityCurrentWeather} from '../models/city-current-weather.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccuweatherHttpService {
   readonly url = 'http://dataservice.accuweather.com';
-  // readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA';
-  readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCasf';
+  readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA';
   constructor(private http: HttpClient) { }
 
   search(keyword: string): Observable <City[]> {
     const params = {
-      'q': keyword,
-      'apikey': this.apiKey
+      q: keyword,
+      apikey: this.apiKey
     };
 
     return this.http.get(this.url + '/locations/v1/cities/autocomplete', {params})
@@ -31,7 +30,7 @@ export class AccuweatherHttpService {
 
   getCityCurrentWeather(cityCode: number): Observable<CityCurrentWeather> {
     const params = {
-      'apikey': this.apiKey
+      apikey: this.apiKey
     };
 
     return this.http.get(this.url + '/currentconditions/v1/' + cityCode, {params})
@@ -50,8 +49,8 @@ export class AccuweatherHttpService {
   getCityForecast(cityCode: number): Observable<CityForecast> {
 
     const params = {
-      'apikey': this.apiKey,
-      'metric': 'true'
+      apikey: this.apiKey,
+      metric: 'true'
     };
 
     return this.http.get(this.url + '/forecasts/v1/daily/5day/' + cityCode, {params})
