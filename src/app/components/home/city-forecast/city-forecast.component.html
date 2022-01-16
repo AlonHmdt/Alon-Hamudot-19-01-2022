@@ -1,16 +1,9 @@
 <mat-card>
   <mat-card-title-group>
-    <div class="w-25">
-      <mat-card-title>{{cityForecast.CityName}}</mat-card-title>
-      <mat-card-title>{{cityForecast.Current.Temperature['Metric']['Value']}}</mat-card-title>
-    </div>
-
-    <div class="w-50">
-      <img class="icon" src="https://developer.accuweather.com/sites/default/files/{{cityForecast.Current.WeatherIcon}}-s.png" >
-    </div>
-
+    <mat-card-title>{{cityForecast.CityName}}</mat-card-title>
+    <mat-card-title>{{cityForecast.Current.Temperature['Metric']['Value']}}</mat-card-title>
+    <img class="icon"  src="https://developer.accuweather.com/sites/default/files/{{padLeadingZeros(cityForecast.Current.WeatherIcon, 2)}}-s.png">
     <div class="w-25">Add To Favourites</div>
-
   </mat-card-title-group>
   <mat-card-content class="mt-2">
     <h1 class="text-center">{{cityForecast.Current.WeatherText}}</h1>

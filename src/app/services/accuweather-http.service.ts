@@ -11,7 +11,8 @@ import {CityCurrentWeather} from "../models/city-current-weather.model";
 })
 export class AccuweatherHttpService {
   readonly url = 'http://dataservice.accuweather.com';
-  readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA';
+  // readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA';
+  readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCasf';
   constructor(private http: HttpClient) { }
 
   search(keyword: string): Observable <City[]> {
@@ -40,7 +41,7 @@ export class AccuweatherHttpService {
           cityCurrentWeather.WeatherIcon = response[0].WeatherIcon;
           cityCurrentWeather.WeatherText = response[0].WeatherText;
           cityCurrentWeather.PrecipitationType = response[0].PrecipitationType;
-          cityCurrentWeather.Temperature = response[0].temperature;
+          cityCurrentWeather.Temperature = response[0].Temperature;
           return cityCurrentWeather;
         })
       );

@@ -1,6 +1,6 @@
-import { Action } from '@ngrx/store'
-import {CityWeatherCard} from "../models/city-weather-card.model";
-import {City} from "../models/city.model";
+import { Action } from '@ngrx/store';
+import {CityWeatherCard} from '../models/city-weather-card.model';
+import {City} from '../models/city.model';
 
 export const FETCH_CITY_FORECAST         = 'FETCH_CITY_FORECAST';
 export const SHOW_CITY_FORECAST          = 'SHOW_CITY_FORECAST';
