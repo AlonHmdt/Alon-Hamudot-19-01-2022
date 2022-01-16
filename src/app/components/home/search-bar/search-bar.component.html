@@ -1,0 +1,18 @@
+<div class="w-100 d-flex justify-content-center">
+  <mat-form-field class="my-2 w-75" appearance="outline">
+    <mat-icon matPrefix>search</mat-icon>
+    <mat-label>Type city name</mat-label>
+    <input type="text"
+           placeholder="Type city name"
+           matInput
+           [matAutocomplete]="auto"
+           (keyup)="search($event.target.value)">
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option *ngFor="let city of list" [value]="city.LocalizedName" (click)="showCityForecast(city)">
+        {{city.LocalizedName}}
+      </mat-option>
+    </mat-autocomplete>
+
+  </mat-form-field>
+</div>
+
