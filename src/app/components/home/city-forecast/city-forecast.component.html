@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-title-group>
+    <div class="w-25">
+      <mat-card-title>{{cityForecast.CityName}}</mat-card-title>
+      <mat-card-title>{{cityForecast.Current.Temperature['Metric']['Value']}}</mat-card-title>
+    </div>
+
+    <div class="w-50">
+      <img class="icon" src="https://developer.accuweather.com/sites/default/files/{{cityForecast.Current.WeatherIcon}}-s.png" >
+    </div>
+
+    <div class="w-25">Add To Favourites</div>
+
+  </mat-card-title-group>
+  <mat-card-content class="mt-2">
+    <h1 class="text-center">{{cityForecast.Current.WeatherText}}</h1>
+    <div>
+      <div class="d-flex flex-wrap flex-lg-nowrap justify-content-center">
+        <div class="card mx-2" *ngFor="let forecast of cityForecast.Forecast.DailyForecasts">
+          <div class="card-body">
+            <p>{{forecast.Date | date: 'EEEE, MMMM d'}}</p>
+            <p>{{forecast.Temperature.Minimum.Value}} - {{forecast.Temperature.Maximum.Value}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
