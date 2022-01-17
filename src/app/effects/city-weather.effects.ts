@@ -6,14 +6,11 @@ import * as CityForeCastActions from '../actions/city-forecast.actions';
 import {AccuweatherHttpService} from '../services/accuweather-http.service';
 import {Injectable} from '@angular/core';
 import {CityWeatherCard} from '../models/city-weather-card.model';
-import {CityCurrentWeather} from '../models/city-current-weather.model';
-import {CityForecast} from '../models/city-forecast.model';
-import {FetchCityForecastFail} from "../actions/city-forecast.actions";
+
 import {Router} from "@angular/router";
 
-
 @Injectable()
-export class CityForecastEffects {
+export class CityWeatherEffects {
   @Effect()
   cityForecastFetch$ = this.actions$.pipe(
     ofType(CityForecastActions.FETCH_CITY_FORECAST),
@@ -22,8 +19,6 @@ export class CityForecastEffects {
           {
             currentWeather: this.accuweatherHttpService.getCityCurrentWeather(cityData.payload.Key),
             forecastWeather: this.accuweatherHttpService.getCityForecast(cityData.payload.Key)
-            // currentWeather: new CityCurrentWeather(),
-            // forecastWeather: new CityForecast()
           })
           .pipe(
             map(res => {

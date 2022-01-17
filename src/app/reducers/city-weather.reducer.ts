@@ -16,7 +16,7 @@ const initialState: State = {
 };
 
 
-export function cityForecastReducer(
+export function cityWeatherReducer(
   state: State = initialState,
   action: CityForecastActionsActions
 ) {

@@ -6,6 +6,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Store} from '@ngrx/store';
 import * as CityForeCastActions from '../../../actions/city-forecast.actions';
 import {City} from '../../../models/city.model';
+import {State} from "../../../reducers/city-weather.reducer";
 
 @Component({
   selector: 'app-search-bar',
@@ -187,11 +188,10 @@ export class SearchBarComponent implements OnInit {
 
 
   constructor(private accuweatherHttpService: AccuweatherHttpService, private router: Router,
-              private route: ActivatedRoute, private store: Store<{ cityForecast: City }>) {
+              private route: ActivatedRoute, private store: Store<{ cityWeatherReducer: State }>) {
   }
 
   ngOnInit() {
-    // this.showCityForecast(this.initialCity);
 
     this.citiesList$ = this.subject.pipe(
       distinctUntilChanged(),
@@ -212,22 +212,6 @@ export class SearchBarComponent implements OnInit {
   }
 
   showCityForecast(city: City): void {
-    // forkJoin(
-    //   {
-    //     currentWeather: this.accuweatherHttpService.getCityCurrentWeather(city.Key),
-    //     forecastWeather: this.accuweatherHttpService.getCityForecast(city.Key)
-    //   }
-    // ).subscribe(res => {
-    //   const cityForecast = {
-    //     Key: city.Key,
-    //     CityName: city.LocalizedName,
-    //     IsFavourite: false,
-    //     Current: res.currentWeather,
-    //     Forecast: res.forecastWeather
-    //   };
-    //
-    //   this.store.dispatch(new CityForeCastActions.ShowCityForecast(cityForecast));
-    // });
     this.store.dispatch(new CityForeCastActions.FetchCityForecast(city));
   }
 
