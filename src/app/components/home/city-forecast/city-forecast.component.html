@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card *ngIf="cityWeatherCard">
   <div class="d-flex justify-content-between">
     <div>
       <p class="h5">{{cityWeatherCard.CityName}}</p>
@@ -10,8 +10,8 @@
       <p class="h1 text-center">{{cityWeatherCard.Current.WeatherText}}</p>
     </div>
     <div class="pointer" >
-      <mat-icon class="icon-display" (click)="toggleFavorite()" *ngIf="!cityWeatherCard.IsFavourite">favorite_border</mat-icon>
-      <mat-icon class="text-danger icon-display" (click)="toggleFavorite()" *ngIf="cityWeatherCard.IsFavourite">favorite</mat-icon>
+      <mat-icon class="icon-display" (click)="toggleFavorite()" *ngIf="!isFav">favorite_border</mat-icon>
+      <mat-icon class="text-danger icon-display" (click)="toggleFavorite()" *ngIf="isFav">favorite</mat-icon>
     </div>
   </div>
   <mat-card-content class="mt-2">

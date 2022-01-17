@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {forkJoin, Observable, of} from 'rxjs';
+import {catchError, map} from 'rxjs/operators';
 import {City} from '../models/city.model';
 import {CityForecast} from '../models/city-forecast.model';
 import {CityCurrentWeather} from '../models/city-current-weather.model';
+import {CityWeatherCard} from "../models/city-weather-card.model";
+import * as CityForeCastActions from "../actions/city-forecast.actions";
 
 @Injectable({
   providedIn: 'root'
@@ -60,6 +62,29 @@ export class AccuweatherHttpService {
           cityForecast.Headline = response.Headline;
           cityForecast.DailyForecasts = response.DailyForecasts;
           return response;
+        })
+      );
+  }
+
+  getCityWeatherCard(cityData, isFavourite = false): any {
+    return forkJoin(
+      {
+        currentWeather: this.getCityCurrentWeather(cityData.payload.Key),
+        forecastWeather: this.getCityForecast(cityData.payload.Key)
+      })
+      .pipe(
+        map(res => {
+          const cityForecast = new CityWeatherCard();
+          cityForecast.CityName = cityData.payload.LocalizedName;
+          cityForecast.Key = cityData.payload.Key;
+          cityForecast.IsFavourite = isFavourite;
+          cityForecast.Current = res.currentWeather;
+          cityForecast.Forecast = res.forecastWeather;
+          return new CityForeCastActions.ShowCityForecast(cityForecast);
+        }),
+        catchError(error => {
+          console.log(error);
+          return of(new CityForeCastActions.FetchCityForecastFail('Something went wrong'));
         })
       );
   }

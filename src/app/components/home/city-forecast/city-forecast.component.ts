@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {CityWeatherCard} from "../../../models/city-weather-card.model";
-import {Store} from "@ngrx/store";
-import {State} from "../../../reducers/city-weather.reducer";
+import {CityWeatherCard} from '../../../models/city-weather-card.model';
+import {Store} from '@ngrx/store';
+import {State} from '../../../reducers/city-weather.reducer';
+import * as CityForeCastActions from '../../../actions/city-forecast.actions';
 
 @Component({
   selector: 'app-city-forecast',
@@ -10,6 +11,7 @@ import {State} from "../../../reducers/city-weather.reducer";
 })
 export class CityForecastComponent implements OnInit {
   cityWeatherCard: CityWeatherCard;
+  isFav: boolean;
 
   constructor(private store: Store<{ cityWeatherReducer: State }>) { }
 
@@ -17,9 +19,17 @@ export class CityForecastComponent implements OnInit {
     this.store.select('cityWeatherReducer').subscribe(cityWeatherState => {
       this.cityWeatherCard = cityWeatherState.cityWeatherCard;
     })
+
+    this.store.select('cityWeatherReducer').subscribe(cityWeatherState => {
+      this.isFav = cityWeatherState.favourites.some(item => this.cityWeatherCard.Key === item.Key);
+    })
   }
 
   toggleFavorite(): void {
-    console.log('toggle');
+    if (!this.isFav) {
+      this.store.dispatch(new CityForeCastActions.AddCityToFavourites(this.cityWeatherCard));
+      return;
+    }
+    this.store.dispatch(new CityForeCastActions.RemoveCityToFavourites(this.cityWeatherCard.Key));
   }
 }

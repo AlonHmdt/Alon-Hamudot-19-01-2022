@@ -15,27 +15,10 @@ export class CityWeatherEffects {
   cityForecastFetch$ = this.actions$.pipe(
     ofType(CityForecastActions.FETCH_CITY_FORECAST),
     switchMap((cityData: CityForecastActions.FetchCityForecast) => {
-        return forkJoin(
-          {
-            currentWeather: this.accuweatherHttpService.getCityCurrentWeather(cityData.payload.Key),
-            forecastWeather: this.accuweatherHttpService.getCityForecast(cityData.payload.Key)
-          })
-          .pipe(
-            map(res => {
-              const cityForecast = new CityWeatherCard();
-              cityForecast.CityName = cityData.payload.LocalizedName;
-              cityForecast.Key = cityData.payload.Key;
-              cityForecast.IsFavourite = false;
-              cityForecast.Current = res.currentWeather;
-              cityForecast.Forecast = res.forecastWeather;
-              return new CityForeCastActions.ShowCityForecast(cityForecast);
-            }),
-            catchError(error => {
-              return of(new CityForeCastActions.FetchCityForecastFail('Something went wrong'));
-            })
-          );
+        return this.accuweatherHttpService.getCityWeatherCard(cityData);
       }
     ));
+
 
   @Effect({dispatch: false})
   showCityForecast = this.actions$.pipe(

@@ -181,12 +181,6 @@ export class SearchBarComponent implements OnInit {
   subject = new Subject<string>();
   showResults: boolean;
 
-  initialCity: City = {
-    Key: 215854,
-    LocalizedName: 'Tel Aviv',
-  };
-
-
   constructor(private accuweatherHttpService: AccuweatherHttpService, private router: Router,
               private route: ActivatedRoute, private store: Store<{ cityWeatherReducer: State }>) {
   }
