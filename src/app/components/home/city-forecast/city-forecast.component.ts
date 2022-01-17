@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CityWeatherCard} from "../../../models/city-weather-card.model";
 import {Store} from "@ngrx/store";
 import {State} from "../../../reducers/city-weather.reducer";
@@ -10,6 +10,7 @@ import {State} from "../../../reducers/city-weather.reducer";
 })
 export class CityForecastComponent implements OnInit {
   cityWeatherCard: CityWeatherCard;
+
   constructor(private store: Store<{ cityWeatherReducer: State }>) { }
 
   ngOnInit(): void {
@@ -18,4 +19,7 @@ export class CityForecastComponent implements OnInit {
     })
   }
 
+  toggleFavorite(): void {
+    console.log('toggle');
+  }
 }

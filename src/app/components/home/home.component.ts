@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log('s');
     this.store.dispatch(new CityForeCastActions.FetchCityForecast(this.initialCity));
 
   }

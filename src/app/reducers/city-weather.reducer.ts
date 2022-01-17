@@ -4,12 +4,14 @@ import {CityForecastActionsActions} from '../actions/city-forecast.actions';
 
 
 export interface State {
+  favourites: CityWeatherCard[],
   cityWeatherCard: CityWeatherCard;
   fetchError: string;
   loading: boolean;
 }
 
 const initialState: State = {
+  favourites: [],
   cityWeatherCard: null,
   fetchError: null,
   loading: false
@@ -27,6 +29,10 @@ export function cityWeatherReducer(
       return {...state, fetchError: null, loading: true};
     case CityForeCastActions.FETCH_CITY_FORECAST_FAIL:
       return {...state, cityWeatherCard: null, fetchError: action.payload, loading: true};
+    case CityForeCastActions.ADD_CITY_TO_FAVOURITES:
+      return {...state, favourites: [...state.favourites, action.payload]};
+    case CityForeCastActions.REMOVE_CITY_FROM_FAVOURITES:
+      return {...state, favourites: [...state.favourites, action.payload]};
     default:
       return state;
   }

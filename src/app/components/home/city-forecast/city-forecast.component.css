@@ -6,3 +6,8 @@
 .icon {
   width: 150px;
 }
+
+
+.icon-display {
+  transform: scale(1.5);
+}
