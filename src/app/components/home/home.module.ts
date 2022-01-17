@@ -17,7 +17,13 @@ import {UnitSignPipe} from "../../pipes/unit-sign.pipe";
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    children: [
+      {
+        path: 'forecast',
+        component: CityForecastComponent,
+      }
+    ]
   }
 ];
 

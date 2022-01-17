@@ -120,11 +120,9 @@ export class CityForecastComponent implements OnInit {
   //   }
   // }
 
-  @Input() cityForecast: CityWeatherCard;
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.cityForecast);
   }
 
 }

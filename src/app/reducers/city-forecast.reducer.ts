@@ -10,7 +10,7 @@ export interface State {
 }
 
 const initialState: State = {
-  cityWeatherCard: new CityWeatherCard(),
+  cityWeatherCard: null,
   fetchError: null,
   loading: false
 };

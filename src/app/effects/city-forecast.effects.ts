@@ -1,6 +1,6 @@
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import * as CityForecastActions from '../actions/city-forecast.actions';
-import {catchError, map, mergeMap, switchMap} from 'rxjs/operators';
+import {catchError, map, mergeMap, switchMap, tap} from 'rxjs/operators';
 import {forkJoin, of} from 'rxjs';
 import * as CityForeCastActions from '../actions/city-forecast.actions';
 import {AccuweatherHttpService} from '../services/accuweather-http.service';
@@ -9,9 +9,9 @@ import {CityWeatherCard} from '../models/city-weather-card.model';
 import {CityCurrentWeather} from '../models/city-current-weather.model';
 import {CityForecast} from '../models/city-forecast.model';
 import {FetchCityForecastFail} from "../actions/city-forecast.actions";
+import {Router} from "@angular/router";
 
 
-@Injectable()
 @Injectable()
 export class CityForecastEffects {
   @Effect()
@@ -42,7 +42,14 @@ export class CityForecastEffects {
       }
     ));
 
+  @Effect({dispatch: false})
+  showCityForecast = this.actions$.pipe(
+    ofType(CityForecastActions.SHOW_CITY_FORECAST),
+    tap(() => {
+        this.router.navigate(['home', 'forecast']);
+      }
+    ))
 
-  constructor(private actions$: Actions, private accuweatherHttpService: AccuweatherHttpService) {
+  constructor(private actions$: Actions, private accuweatherHttpService: AccuweatherHttpService, private router: Router) {
   }
 }

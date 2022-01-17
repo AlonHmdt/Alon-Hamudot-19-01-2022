@@ -179,6 +179,7 @@ export class SearchBarComponent implements OnInit {
   citiesList$: Observable<City[]>;
   subject = new Subject<string>();
   showResults: boolean;
+
   initialCity: City = {
     Key: 215854,
     LocalizedName: 'Tel Aviv',
@@ -190,7 +191,7 @@ export class SearchBarComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.showCityForecast(this.initialCity);
+    // this.showCityForecast(this.initialCity);
 
     this.citiesList$ = this.subject.pipe(
       distinctUntilChanged(),
