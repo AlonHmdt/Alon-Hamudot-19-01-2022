@@ -1,20 +1,8 @@
-<!--<nav class="navbar navbar-dark bg-primary navbar-expand-lg">-->
-<!--  <div class="container-fluid">-->
-<!--    <span class="navbar-brand pointer" routerLink="/home">My Weather</span>-->
-<!--    <div class="" id="navbarNavAltMarkup">-->
-<!--      <div class="navbar-nav flex-row">-->
-<!--        <span class="pointer nav-link mx-1" [routerLinkActive]="['active']" routerLink="/home">Home</span>-->
-<!--        <span class="pointer nav-link mx-1" [routerLinkActive]="['active']" routerLink="/favorites">Favorites</span>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</nav>-->
-
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span routerLink="/home">My Weather</span>
-    <span class="example-spacer"></span>
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>
-    <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>
+    <span class="logo pointer" routerLink="/home">My Weather</span>
+    <span class="spacer"></span>
+    <span class="nav-item pointer"  [routerLinkActive]="['active']" routerLink="/home">Home</span>
+    <span class="nav-item pointer"  [routerLinkActive]="['active']" routerLink="/favorites">Favorites</span>
   </mat-toolbar-row>
 </mat-toolbar>

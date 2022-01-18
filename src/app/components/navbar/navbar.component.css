@@ -1,7 +1,16 @@
-.example-icon {
+.logo {
+  text-shadow: 2px 2px #322b2b99;
+}
+
+.nav-item {
   padding: 0 14px;
 }
 
-.example-spacer {
+.spacer {
   flex: 1 1 auto;
+}
+
+.active {
+  background: #eca933;
+  border-radius: 20px;
 }
