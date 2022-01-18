@@ -1,9 +1,9 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {Subscription} from 'rxjs';
-import {State} from '../../reducers/city-weather.reducer';
 import {CityWeatherCard} from '../../models/city-weather-card.model';
 import {City} from '../../models/city.model';
+import {State} from '../../reducers/city-weather.reducer';
 import * as CityForeCastActions from '../../actions/city-forecast.actions';
 
 @Component({

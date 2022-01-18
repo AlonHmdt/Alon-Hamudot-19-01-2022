@@ -1,20 +1,21 @@
 import {Injectable} from '@angular/core';
-import {forkJoin, from, Observable, of} from 'rxjs';
-import {catchError, map, mergeMap} from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
+import {forkJoin, Observable, of} from 'rxjs';
+import {catchError, map} from 'rxjs/operators';
 import {City} from '../models/city.model';
 import {CityForecast} from '../models/city-forecast.model';
 import {CityCurrentWeather} from '../models/city-current-weather.model';
 import {CityWeatherCard} from '../models/city-weather-card.model';
+import {FetchCityForecastFail, ShowCityForecast} from '../actions/city-forecast.actions';
 import * as CityForeCastActions from '../actions/city-forecast.actions';
-import {FetchCityForecastFail} from '../actions/city-forecast.actions';
-import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccuweatherHttpService {
   readonly url = 'https://dataservice.accuweather.com';
-  readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA';
+  // readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA'; //first
+  readonly apiKey = 'aAzBLQb54i8UeWQIxdE6V0l0WhAeGlDG'; //second
 
   constructor(private http: HttpClient) {
   }
@@ -69,7 +70,7 @@ export class AccuweatherHttpService {
       );
   }
 
-  getCityWeatherCard(cityData): any {
+  getCityWeatherCard(cityData): Observable<ShowCityForecast | FetchCityForecastFail> {
     return forkJoin(
       {
         currentWeather: this.getCityCurrentWeather(cityData.payload.Key),
@@ -85,7 +86,6 @@ export class AccuweatherHttpService {
           return new CityForeCastActions.ShowCityForecast(cityForecast);
         }),
         catchError(error => {
-          console.log(error);
           return of(new CityForeCastActions.FetchCityForecastFail('Something went wrong'));
         })
       );

@@ -1,5 +1,7 @@
-<div class="d-flex flex-wrap align-items-center justify-content-between mt-3">
-  <div class="p-4 favourite-item mt-3" *ngFor="let item of items" (click)="showCity(item)">
+<div class="d-flex flex-wrap mt-3 justify-content-lg-start justify-content-around">
+  <div class="p-4 favourite-item m-3 pointer font-weight-bold text-center" *ngFor="let item of items" (click)="showCity(item)">
     <p>{{item.CityName}}</p>
+    <p>{{item.Current.Temperature['Metric']['Value'] | unitSign}}</p>
   </div>
 </div>
+

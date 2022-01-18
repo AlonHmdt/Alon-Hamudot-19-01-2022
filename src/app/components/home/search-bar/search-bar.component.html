@@ -8,7 +8,7 @@
            [matAutocomplete]="auto"
            (keyup)="search($event.target.value)">
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let city of list" [value]="city.LocalizedName" (click)="showCityForecast(city)">
+      <mat-option *ngFor="let city of citiesList$ | async" [value]="city.LocalizedName" (click)="showCityForecast(city)">
         {{city.LocalizedName}}
       </mat-option>
     </mat-autocomplete>

@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
-import {RouterModule, Routes} from "@angular/router";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-import {FavoritesComponent} from "./favorites.component";
-import {CommonModule} from "@angular/common";
+import {FavoritesComponent} from './favorites.component';
+import {CommonModule} from '@angular/common';
+import {AppPipesModule} from '../../pipes/app-pipes.module';
 
 const routes: Routes = [
   {
@@ -17,8 +18,10 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    AppPipesModule
   ],
   providers: [],
 })
-export class FavoritesModule { }
+export class FavoritesModule {
+}
