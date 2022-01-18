@@ -364,11 +364,11 @@ class NavbarComponent {
     }
 }
 NavbarComponent.ɵfac = function NavbarComponent_Factory(t) { return new (t || NavbarComponent)(); };
-NavbarComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: NavbarComponent, selectors: [["app-navbar"]], outputs: { themeToggled: "themeToggled" }, decls: 15, vars: 5, consts: [["color", "primary", 1, "sticky-top"], ["routerLink", "/home", 1, "logo", "pointer"], [1, "spacer"], [1, "nav-item", "d-flex"], [1, "mx-2", 3, "formControl"], ["routerLink", "/home", 1, "nav-item", "pointer", 3, "routerLinkActive"], ["routerLink", "/favorites", 1, "nav-item", "pointer", 3, "routerLinkActive"]], template: function NavbarComponent_Template(rf, ctx) { if (rf & 1) {
+NavbarComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: NavbarComponent, selectors: [["app-navbar"]], outputs: { themeToggled: "themeToggled" }, decls: 15, vars: 5, consts: [["color", "primary", 1, "sticky-top"], ["routerLink", "/home", 1, "logo", "pointer"], [1, "spacer"], [1, "nav-item", "d-flex"], [1, "mx-1", 3, "formControl"], ["routerLink", "/home", 1, "nav-item", "pointer", 3, "routerLinkActive"], ["routerLink", "/favorites", 1, "nav-item", "pointer", 3, "routerLinkActive"]], template: function NavbarComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-toolbar", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "mat-toolbar-row");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "My Weather");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "My Weathe1");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "span", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "div", 3);

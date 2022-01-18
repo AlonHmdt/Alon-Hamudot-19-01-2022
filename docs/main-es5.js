@@ -748,7 +748,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       },
       decls: 15,
       vars: 5,
-      consts: [["color", "primary", 1, "sticky-top"], ["routerLink", "/home", 1, "logo", "pointer"], [1, "spacer"], [1, "nav-item", "d-flex"], [1, "mx-2", 3, "formControl"], ["routerLink", "/home", 1, "nav-item", "pointer", 3, "routerLinkActive"], ["routerLink", "/favorites", 1, "nav-item", "pointer", 3, "routerLinkActive"]],
+      consts: [["color", "primary", 1, "sticky-top"], ["routerLink", "/home", 1, "logo", "pointer"], [1, "spacer"], [1, "nav-item", "d-flex"], [1, "mx-1", 3, "formControl"], ["routerLink", "/home", 1, "nav-item", "pointer", 3, "routerLinkActive"], ["routerLink", "/favorites", 1, "nav-item", "pointer", 3, "routerLinkActive"]],
       template: function NavbarComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "mat-toolbar", 0);
@@ -757,7 +757,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "span", 1);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "My Weather");
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "My Weathe1");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
