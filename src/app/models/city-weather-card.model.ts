@@ -7,5 +7,4 @@ export class CityWeatherCard {
   Key: number;
   Current: CityCurrentWeather;
   Forecast: CityForecast;
-  IsFavourite: boolean;
 }

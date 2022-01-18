@@ -1,12 +1,12 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {forkJoin, Observable, of} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {City} from '../models/city.model';
 import {CityForecast} from '../models/city-forecast.model';
 import {CityCurrentWeather} from '../models/city-current-weather.model';
-import {CityWeatherCard} from "../models/city-weather-card.model";
-import * as CityForeCastActions from "../actions/city-forecast.actions";
+import {CityWeatherCard} from '../models/city-weather-card.model';
+import * as CityForeCastActions from '../actions/city-forecast.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +14,11 @@ import * as CityForeCastActions from "../actions/city-forecast.actions";
 export class AccuweatherHttpService {
   readonly url = 'http://dataservice.accuweather.com';
   readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA';
-  constructor(private http: HttpClient) { }
 
-  search(keyword: string): Observable <City[]> {
+  constructor(private http: HttpClient) {
+  }
+
+  search(keyword: string): Observable<City[]> {
     const params = {
       q: keyword,
       apikey: this.apiKey
@@ -66,7 +68,7 @@ export class AccuweatherHttpService {
       );
   }
 
-  getCityWeatherCard(cityData, isFavourite = false): any {
+  getCityWeatherCard(cityData): any {
     return forkJoin(
       {
         currentWeather: this.getCityCurrentWeather(cityData.payload.Key),
@@ -77,7 +79,6 @@ export class AccuweatherHttpService {
           const cityForecast = new CityWeatherCard();
           cityForecast.CityName = cityData.payload.LocalizedName;
           cityForecast.Key = cityData.payload.Key;
-          cityForecast.IsFavourite = isFavourite;
           cityForecast.Current = res.currentWeather;
           cityForecast.Forecast = res.forecastWeather;
           return new CityForeCastActions.ShowCityForecast(cityForecast);

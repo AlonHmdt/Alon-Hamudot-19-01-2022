@@ -1,11 +1,8 @@
 import {Actions, Effect, ofType} from '@ngrx/effects';
 import * as CityForecastActions from '../actions/city-forecast.actions';
-import {catchError, map, mergeMap, switchMap, tap} from 'rxjs/operators';
-import {forkJoin, of} from 'rxjs';
-import * as CityForeCastActions from '../actions/city-forecast.actions';
+import { switchMap, tap} from 'rxjs/operators';
 import {AccuweatherHttpService} from '../services/accuweather-http.service';
 import {Injectable} from '@angular/core';
-import {CityWeatherCard} from '../models/city-weather-card.model';
 
 import {Router} from "@angular/router";
 

@@ -7,7 +7,6 @@ export const SHOW_CITY_FORECAST         = 'SHOW_CITY_FORECAST';
 export const FETCH_CITY_FORECAST_FAIL   = 'FETCH_CITY_FORECAST_FAIL';
 export const ADD_CITY_TO_FAVOURITES     = 'ADD_CITY_TO_FAVOURITES';
 export const REMOVE_CITY_FROM_FAVOURITES = 'REMOVE_CITY_FROM_FAVOURITES';
-export const SHOW_FAVOURITE             = 'SHOW_FAVOURITE';
 
 export class FetchCityForecast implements Action {
   readonly type = FETCH_CITY_FORECAST;

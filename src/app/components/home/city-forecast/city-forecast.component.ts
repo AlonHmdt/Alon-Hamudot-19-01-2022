@@ -16,13 +16,11 @@ export class CityForecastComponent implements OnInit {
   constructor(private store: Store<{ cityWeatherReducer: State }>) { }
 
   ngOnInit(): void {
-    this.store.select('cityWeatherReducer').subscribe(cityWeatherState => {
+    this.store.select('cityWeatherReducer').subscribe(cityWeatherState => { //// create subsciption
       this.cityWeatherCard = cityWeatherState.cityWeatherCard;
-    })
-
-    this.store.select('cityWeatherReducer').subscribe(cityWeatherState => {
       this.isFav = cityWeatherState.favourites.some(item => this.cityWeatherCard.Key === item.Key);
     })
+
   }
 
   toggleFavorite(): void {

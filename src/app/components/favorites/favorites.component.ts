@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Store} from "@ngrx/store";
-import {State} from "../../reducers/city-weather.reducer";
-import {CityWeatherCard} from "../../models/city-weather-card.model";
-import * as CityForeCastActions from "../../actions/city-forecast.actions";
+import {Store} from '@ngrx/store';
+import * as CityForeCastActions from '../../actions/city-forecast.actions';
+import {State} from '../../reducers/city-weather.reducer';
+import {CityWeatherCard} from '../../models/city-weather-card.model';
 import {City} from "../../models/city.model";
 
 @Component({
