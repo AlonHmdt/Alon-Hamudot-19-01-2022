@@ -11,8 +11,8 @@ import * as CityForeCastActions from './actions/city-forecast.actions';
 })
 export class AppComponent implements OnInit {
   title = 'My Weather';
-
-  initialCity: City = {
+  isDark = false;
+  readonly initialCity: City = {
     Key: 215854,
     LocalizedName: 'Tel Aviv',
   };
@@ -22,6 +22,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new CityForeCastActions.FetchCityForecast(this.initialCity));
+  }
+
+  themeToggled(isDark: boolean): void{
+    this.isDark = isDark;
   }
 }
 

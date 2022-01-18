@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {FormControl} from '@angular/forms';
 
 
 @Component({
@@ -7,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  toggleControl = new FormControl(false);
+  @Output() themeToggled = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit(): void {
+    this.toggleControl.valueChanges.subscribe(value => {
+      this.themeToggled.emit(value);
+    });
   }
 
 }

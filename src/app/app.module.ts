@@ -13,6 +13,8 @@ import {EffectsModule} from '@ngrx/effects';
 import {CityWeatherEffects} from './effects/city-weather.effects';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import {MatIconModule} from '@angular/material/icon';
     StoreModule.forRoot({cityWeatherReducer: cityWeatherReducer}),
     EffectsModule.forRoot([CityWeatherEffects]),
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

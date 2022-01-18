@@ -2,6 +2,14 @@
   <mat-toolbar-row>
     <span class="logo pointer" routerLink="/home">My Weather</span>
     <span class="spacer"></span>
+    <div class="nav-item d-flex">
+      <mat-icon>brightness_5</mat-icon>
+      <mat-slide-toggle [formControl]="toggleControl" class="mx-2"></mat-slide-toggle>
+      <mat-icon>bedtime</mat-icon>
+    </div>
+
+
+
     <span class="nav-item pointer"  [routerLinkActive]="['active']" routerLink="/home">Home</span>
     <span class="nav-item pointer"  [routerLinkActive]="['active']" routerLink="/favorites">Favorites</span>
   </mat-toolbar-row>
