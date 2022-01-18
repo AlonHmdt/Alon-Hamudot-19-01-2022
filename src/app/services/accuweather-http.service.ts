@@ -8,6 +8,7 @@ import {City} from '../models/city.model';
 import {CityForecast} from '../models/city-forecast.model';
 import {CityCurrentWeather} from '../models/city-current-weather.model';
 import {CityWeatherCard} from '../models/city-weather-card.model';
+import * as CityForecastActions from '../actions/city-forecast.actions';
 
 
 @Injectable({
@@ -70,7 +71,7 @@ export class AccuweatherHttpService {
       );
   }
 
-  getCityWeatherCard(cityData): Observable<ShowCityForecast | FetchCityForecastFail> {
+  getCityWeatherCard(cityData: CityForecastActions.FetchCityForecast): Observable<ShowCityForecast | FetchCityForecastFail> {
     return forkJoin(
       {
         currentWeather: this.getCityCurrentWeather(cityData.payload.Key),
