@@ -8,6 +8,7 @@ import {City} from '../models/city.model';
 import {CityForecast} from '../models/city-forecast.model';
 import {CityCurrentWeather} from '../models/city-current-weather.model';
 import {CityWeatherCard} from '../models/city-weather-card.model';
+import * as CityForecastActions from '../actions/city-forecast.actions';
 
 
 @Injectable({
@@ -15,8 +16,7 @@ import {CityWeatherCard} from '../models/city-weather-card.model';
 })
 export class AccuweatherHttpService {
   readonly url = 'https://dataservice.accuweather.com';
-  // readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA'; //first
-  readonly apiKey = 'aAzBLQb54i8UeWQIxdE6V0l0WhAeGlDG'; //second
+  readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA';
 
   constructor(private http: HttpClient) {
   }
@@ -71,7 +71,7 @@ export class AccuweatherHttpService {
       );
   }
 
-  getCityWeatherCard(cityData): Observable<ShowCityForecast | FetchCityForecastFail> {
+  getCityWeatherCard(cityData: CityForecastActions.FetchCityForecast): Observable<ShowCityForecast | FetchCityForecastFail> {
     return forkJoin(
       {
         currentWeather: this.getCityCurrentWeather(cityData.payload.Key),

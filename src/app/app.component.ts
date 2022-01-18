@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
   showError(message: string) {
     this._snackBar.open(message, 'close', {
-      duration: 3000,
+      duration: 5000,
     });
   }
 
