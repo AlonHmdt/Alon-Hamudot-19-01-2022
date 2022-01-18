@@ -396,7 +396,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         key: "showError",
         value: function showError(message) {
           this._snackBar.open(message, 'close', {
-            duration: 3000
+            duration: 5000
           });
         }
       }, {
@@ -813,7 +813,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         }
       },
       directives: [_angular_material_toolbar__WEBPACK_IMPORTED_MODULE_2__["MatToolbar"], _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_2__["MatToolbarRow"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterLink"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_4__["MatIcon"], _angular_material_slide_toggle__WEBPACK_IMPORTED_MODULE_5__["MatSlideToggle"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormControlDirective"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["RouterLinkActive"]],
-      styles: [".logo[_ngcontent-%COMP%] {\r\n  text-shadow: 2px 2px #322b2b99;\r\n}\r\n\r\n.nav-item[_ngcontent-%COMP%] {\r\n  font-size: 12px;\r\n  padding: 0 14px;\r\n}\r\n\r\n.spacer[_ngcontent-%COMP%] {\r\n  flex: 1 1 auto;\r\n}\r\n\r\n.active[_ngcontent-%COMP%] {\r\n  background: #eca933;\r\n  border-radius: 20px;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uYXZiYXIvbmF2YmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSw4QkFBOEI7QUFDaEM7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsbUJBQW1CO0FBQ3JCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9uYXZiYXIvbmF2YmFyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9nbyB7XHJcbiAgdGV4dC1zaGFkb3c6IDJweCAycHggIzMyMmIyYjk5O1xyXG59XHJcblxyXG4ubmF2LWl0ZW0ge1xyXG4gIGZvbnQtc2l6ZTogMTJweDtcclxuICBwYWRkaW5nOiAwIDE0cHg7XHJcbn1cclxuXHJcbi5zcGFjZXIge1xyXG4gIGZsZXg6IDEgMSBhdXRvO1xyXG59XHJcblxyXG4uYWN0aXZlIHtcclxuICBiYWNrZ3JvdW5kOiAjZWNhOTMzO1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbn1cclxuIl19 */"]
+      styles: [".logo[_ngcontent-%COMP%] {\r\n  text-shadow: 2px 2px #322b2b99;\r\n}\r\n\r\n.nav-item[_ngcontent-%COMP%] {\r\n  font-size: 12px;\r\n  padding: 0 12px;\r\n}\r\n\r\n.spacer[_ngcontent-%COMP%] {\r\n  flex: 1 1 auto;\r\n}\r\n\r\n.active[_ngcontent-%COMP%] {\r\n  background: #eca933;\r\n  border-radius: 20px;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9uYXZiYXIvbmF2YmFyLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSw4QkFBOEI7QUFDaEM7O0FBRUE7RUFDRSxlQUFlO0VBQ2YsZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7RUFDRSxtQkFBbUI7RUFDbkIsbUJBQW1CO0FBQ3JCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9uYXZiYXIvbmF2YmFyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubG9nbyB7XHJcbiAgdGV4dC1zaGFkb3c6IDJweCAycHggIzMyMmIyYjk5O1xyXG59XHJcblxyXG4ubmF2LWl0ZW0ge1xyXG4gIGZvbnQtc2l6ZTogMTJweDtcclxuICBwYWRkaW5nOiAwIDEycHg7XHJcbn1cclxuXHJcbi5zcGFjZXIge1xyXG4gIGZsZXg6IDEgMSBhdXRvO1xyXG59XHJcblxyXG4uYWN0aXZlIHtcclxuICBiYWNrZ3JvdW5kOiAjZWNhOTMzO1xyXG4gIGJvcmRlci1yYWRpdXM6IDIwcHg7XHJcbn1cclxuIl19 */"]
     });
     /*@__PURE__*/
 
@@ -1188,9 +1188,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, AccuweatherHttpService);
 
         this.http = http;
-        this.url = 'https://dataservice.accuweather.com'; // readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA'; //first
-
-        this.apiKey = 'aAzBLQb54i8UeWQIxdE6V0l0WhAeGlDG'; //second
+        this.url = 'https://dataservice.accuweather.com';
+        this.apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA';
       }
 
       _createClass(AccuweatherHttpService, [{
