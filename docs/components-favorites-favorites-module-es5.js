@@ -66,21 +66,27 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _pipes_unit_sign_pipe__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ../../pipes/unit-sign.pipe */
     "./src/app/pipes/unit-sign.pipe.ts");
+    /* harmony import */
+
+
+    var _pipes_zero_pad_pipe__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ../../pipes/zero-pad.pipe */
+    "./src/app/pipes/zero-pad.pipe.ts");
 
     function FavoritesComponent_div_1_Template(rf, ctx) {
       if (rf & 1) {
-        var _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
+        var _r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵgetCurrentView"]();
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 3);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function FavoritesComponent_div_1_Template_div_click_0_listener() {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r3);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵrestoreView"](_r4);
 
-          var item_r1 = ctx.$implicit;
+          var item_r2 = ctx.$implicit;
 
-          var ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+          var ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
 
-          return ctx_r2.showCity(item_r1);
+          return ctx_r3.showCity(item_r2);
         });
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "p");
@@ -97,19 +103,37 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "img", 4);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](7, "zeroPad");
+
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       }
 
       if (rf & 2) {
-        var item_r1 = ctx.$implicit;
+        var item_r2 = ctx.$implicit;
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](item_r1.CityName);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](item_r2.CityName);
 
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
 
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](5, 2, item_r1.Current.Temperature["Metric"]["Value"]));
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](5, 3, item_r2.Current.Temperature.Metric.Value));
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate1"]("src", "https://developer.accuweather.com/sites/default/files/", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind2"](7, 5, item_r2.Current.WeatherIcon, 2), "-s.png", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+      }
+    }
+
+    function FavoritesComponent_p_2_Template(rf, ctx) {
+      if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p", 5);
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "No favourites yet");
+
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
       }
     }
 
@@ -141,7 +165,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "ngOnDestroy",
         value: function ngOnDestroy() {
-          this.favouritesSub.unsubscribe();
+          if (this.favouritesSub) {
+            this.favouritesSub.unsubscribe();
+          }
         }
       }]);
 
@@ -155,14 +181,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     FavoritesComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: FavoritesComponent,
       selectors: [["app-favorites"]],
-      decls: 2,
-      vars: 1,
-      consts: [[1, "d-flex", "flex-wrap", "mt-3", "justify-content-lg-start", "justify-content-around"], ["class", "p-4 favourite-item m-3 pointer font-weight-bold text-center", 3, "click", 4, "ngFor", "ngForOf"], [1, "p-4", "favourite-item", "m-3", "pointer", "font-weight-bold", "text-center", 3, "click"]],
+      decls: 3,
+      vars: 2,
+      consts: [[1, "d-flex", "flex-wrap", "mt-3", "justify-content-lg-start", "justify-content-around"], ["class", "p-4 favourite-item m-3 pointer font-weight-bold text-center", 3, "click", 4, "ngFor", "ngForOf"], ["class", "h4 text-center w-100", 4, "ngIf"], [1, "p-4", "favourite-item", "m-3", "pointer", "font-weight-bold", "text-center", 3, "click"], [3, "src"], [1, "h4", "text-center", "w-100"]],
       template: function FavoritesComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
 
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, FavoritesComponent_div_1_Template, 6, 4, "div", 1);
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, FavoritesComponent_div_1_Template, 8, 8, "div", 1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, FavoritesComponent_p_2_Template, 2, 0, "p", 2);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         }
@@ -171,10 +199,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.items);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+
+          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.items.length === 0);
         }
       },
-      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"]],
-      pipes: [_pipes_unit_sign_pipe__WEBPACK_IMPORTED_MODULE_6__["UnitSignPipe"]],
+      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"]],
+      pipes: [_pipes_unit_sign_pipe__WEBPACK_IMPORTED_MODULE_6__["UnitSignPipe"], _pipes_zero_pad_pipe__WEBPACK_IMPORTED_MODULE_7__["ZeroPadPipe"]],
       styles: [".favourite-item[_ngcontent-%COMP%] {\n  width: 190px;\n  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n  border-radius: 10px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9mYXZvcml0ZXMvQzpcXFVzZXJzXFxhbG9uaFxcRGVza3RvcFxccHJvamVjdHNcXEhlcm9sby1Bc3NpZ25tZW50L3NyY1xcYXBwXFxjb21wb25lbnRzXFxmYXZvcml0ZXNcXGZhdm9yaXRlcy5jb21wb25lbnQuc2NzcyIsInNyYy9hcHAvY29tcG9uZW50cy9mYXZvcml0ZXMvZmF2b3JpdGVzLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsWUFBQTtFQUNBLDhFQUFBO0VBQ0EsbUJBQUE7QUNDRiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZmF2b3JpdGVzL2Zhdm9yaXRlcy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mYXZvdXJpdGUtaXRlbSB7XHJcbiAgd2lkdGg6IDE5MHB4O1xyXG4gIGJveC1zaGFkb3c6IDAgMTBweCAxNnB4IDAgcmdiKDAgMCAwIC8gMjAlKSwgMCA2cHggMjBweCAwIHJnYigwIDAgMCAvIDE5JSk7XHJcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcclxufVxyXG4iLCIuZmF2b3VyaXRlLWl0ZW0ge1xuICB3aWR0aDogMTkwcHg7XG4gIGJveC1zaGFkb3c6IDAgMTBweCAxNnB4IDAgcmdiYSgwLCAwLCAwLCAwLjIpLCAwIDZweCAyMHB4IDAgcmdiYSgwLCAwLCAwLCAwLjE5KTtcbiAgYm9yZGVyLXJhZGl1czogMTBweDtcbn0iXX0= */"]
     });
     /*@__PURE__*/
@@ -225,21 +257,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/router */
     "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
     /* harmony import */
 
 
-    var _favorites_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _favorites_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! ./favorites.component */
     "./src/app/components/favorites/favorites.component.ts");
-    /* harmony import */
-
-
-    var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
-    /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
     /* harmony import */
 
 
@@ -249,7 +281,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var routes = [{
       path: '',
-      component: _favorites_component__WEBPACK_IMPORTED_MODULE_2__["FavoritesComponent"]
+      component: _favorites_component__WEBPACK_IMPORTED_MODULE_3__["FavoritesComponent"]
     }];
 
     var FavoritesModule = /*#__PURE__*/_createClass(function FavoritesModule() {
@@ -264,13 +296,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         return new (t || FavoritesModule)();
       },
       providers: [],
-      imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes), _pipes_app_pipes_module__WEBPACK_IMPORTED_MODULE_4__["AppPipesModule"]]]
+      imports: [[_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes), _pipes_app_pipes_module__WEBPACK_IMPORTED_MODULE_4__["AppPipesModule"]]]
     });
 
     (function () {
       (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](FavoritesModule, {
-        declarations: [_favorites_component__WEBPACK_IMPORTED_MODULE_2__["FavoritesComponent"]],
-        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"], _pipes_app_pipes_module__WEBPACK_IMPORTED_MODULE_4__["AppPipesModule"]]
+        declarations: [_favorites_component__WEBPACK_IMPORTED_MODULE_3__["FavoritesComponent"]],
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"], _pipes_app_pipes_module__WEBPACK_IMPORTED_MODULE_4__["AppPipesModule"]]
       });
     })();
     /*@__PURE__*/
@@ -280,8 +312,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](FavoritesModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
-          declarations: [_favorites_component__WEBPACK_IMPORTED_MODULE_2__["FavoritesComponent"]],
-          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes), _pipes_app_pipes_module__WEBPACK_IMPORTED_MODULE_4__["AppPipesModule"]],
+          declarations: [_favorites_component__WEBPACK_IMPORTED_MODULE_3__["FavoritesComponent"]],
+          imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes), _pipes_app_pipes_module__WEBPACK_IMPORTED_MODULE_4__["AppPipesModule"]],
           providers: []
         }]
       }], null, null);
