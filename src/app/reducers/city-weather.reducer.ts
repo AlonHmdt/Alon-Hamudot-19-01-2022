@@ -11,7 +11,20 @@ export interface State {
 }
 
 const initialState: State = {
-  favourites: [],
+  favourites: [
+    {CityName: 'Tel-Aviv', Key: 1, Current: {Temperature: {Metric: 15},  PrecipitationType: 'r', WeatherIcon: '2', WeatherText: 'asdasd'}, Forecast: null},
+    {CityName: 'Berlin', Key: 1, Current: {Temperature: {Metric: 12},  PrecipitationType: 'r', WeatherIcon: '2', WeatherText: 'asdasd'}, Forecast: null},
+    {CityName: 'Ramat-Gan', Key: 1, Current: {Temperature: {Metric: 8},  PrecipitationType: 'r', WeatherIcon: '2', WeatherText: 'asdasd'}, Forecast: null},
+    {CityName: 'Haifa', Key: 1, Current: {Temperature: {Metric: 18},  PrecipitationType: 'r', WeatherIcon: '2', WeatherText: 'asdasd'}, Forecast: null},
+    {CityName: 'Tel-Aviv', Key: 1, Current: {Temperature: {Metric: 0},  PrecipitationType: 'r', WeatherIcon: '2', WeatherText: 'asdasd'}, Forecast: null},
+    {CityName: 'Jerusalem', Key: 1, Current: {Temperature: {Metric: 35},  PrecipitationType: 'r', WeatherIcon: '2', WeatherText: 'asdasd'}, Forecast: null},
+    {CityName: 'Akko', Key: 1, Current: {Temperature: {Metric: 15},  PrecipitationType: 'r', WeatherIcon: '2', WeatherText: 'asdasd'}, Forecast: null},
+    {CityName: 'London', Key: 1, Current: {Temperature: {Metric: 22},  PrecipitationType: 'r', WeatherIcon: '2', WeatherText: 'asdasd'}, Forecast: null},
+    {CityName: 'Ramat-Hasharon', Key: 1, Current: {Temperature: {Metric: 15},  PrecipitationType: 'r', WeatherIcon: '2', WeatherText: 'asdasd'}, Forecast: null},
+    {CityName: 'Ashdod', Key: 1, Current: {Temperature: {Metric: 32},  PrecipitationType: 'r', WeatherIcon: '2', WeatherText: 'asdasd'}, Forecast: null},
+    {CityName: 'Beer Sheva', Key: 1, Current: {Temperature: {Metric: 15},  PrecipitationType: 'r', WeatherIcon: '2', WeatherText: 'asdasd'}, Forecast: null},
+
+  ],
   cityWeatherCard: null,
   fetchError: null,
   loading: false,

@@ -1,1 +1,5 @@
-<p *ngFor="let item of items" (click)="showCity(item)">{{item.CityName}}</p>
+<div class="d-flex flex-wrap align-items-center justify-content-between mt-3">
+  <div class="p-4 favourite-item mt-3" *ngFor="let item of items" (click)="showCity(item)">
+    <p>{{item.CityName}}</p>
+  </div>
+</div>
