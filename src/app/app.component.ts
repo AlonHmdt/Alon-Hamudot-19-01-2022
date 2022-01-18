@@ -1,9 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {MatSnackBar} from '@angular/material/snack-bar';
 import {Store} from '@ngrx/store';
 import {State} from './reducers/city-weather.reducer';
 import {City} from './models/city.model';
 import * as CityForeCastActions from './actions/city-forecast.actions';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import {Subscription} from 'rxjs';
+
 
 
 @Component({
@@ -11,7 +13,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'My Weather';
   isDark = false;
   isLoading = false;
@@ -20,6 +22,7 @@ export class AppComponent implements OnInit {
     Key: 215854,
     LocalizedName: 'Tel Aviv',
   };
+  sub = new Subscription();
 
   constructor(private store: Store<{ cityWeatherReducer: State }>, private _snackBar: MatSnackBar) {
   }
@@ -27,7 +30,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.store.dispatch(new CityForeCastActions.FetchCityForecast(this.initialCity));
 
-    this.store.select('cityWeatherReducer').subscribe(state => {
+    this.sub = this.store.select('cityWeatherReducer').subscribe(state => {
       this.isLoading = state.loading;
       if (state.fetchError) {
         this.showError(state.fetchError);
@@ -44,6 +47,12 @@ export class AppComponent implements OnInit {
 
   themeToggled(isDark: boolean): void{
     this.isDark = isDark;
+  }
+
+  ngOnDestroy() {
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
   }
 }
 

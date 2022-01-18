@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 
 import {FavoritesComponent} from './favorites.component';
-import {CommonModule} from '@angular/common';
 import {AppPipesModule} from '../../pipes/app-pipes.module';
 
 const routes: Routes = [

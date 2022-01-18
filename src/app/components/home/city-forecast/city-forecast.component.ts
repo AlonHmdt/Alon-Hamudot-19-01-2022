@@ -4,6 +4,7 @@ import {Subscription} from 'rxjs';
 import {CityWeatherCard} from '../../../models/city-weather-card.model';
 import {State} from '../../../reducers/city-weather.reducer';
 import * as CityForeCastActions from '../../../actions/city-forecast.actions';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-city-forecast',
@@ -15,10 +16,14 @@ export class CityForecastComponent implements OnInit, OnDestroy {
   cityWeatherCardSub = new Subscription();
   isFav: boolean;
 
-  constructor(private store: Store<{ cityWeatherReducer: State }>) { }
+  constructor(private store: Store<{ cityWeatherReducer: State }>, private router: Router) {
+  }
 
   ngOnInit(): void {
-   this.cityWeatherCardSub = this.store.select('cityWeatherReducer').subscribe(cityWeatherState => {
+    this.cityWeatherCardSub = this.store.select('cityWeatherReducer').subscribe(cityWeatherState => {
+      if (!cityWeatherState.cityWeatherCard) {
+        this.router.navigate(['home']);
+      }
       this.cityWeatherCard = cityWeatherState.cityWeatherCard;
       this.isFav = cityWeatherState.favourites.some(item => this.cityWeatherCard.Key === item.Key);
     });

@@ -2,12 +2,13 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {forkJoin, Observable, of} from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
+import {FetchCityForecastFail, ShowCityForecast} from '../actions/city-forecast.actions';
+import * as CityForeCastActions from '../actions/city-forecast.actions';
 import {City} from '../models/city.model';
 import {CityForecast} from '../models/city-forecast.model';
 import {CityCurrentWeather} from '../models/city-current-weather.model';
 import {CityWeatherCard} from '../models/city-weather-card.model';
-import {FetchCityForecastFail, ShowCityForecast} from '../actions/city-forecast.actions';
-import * as CityForeCastActions from '../actions/city-forecast.actions';
+
 
 @Injectable({
   providedIn: 'root'
