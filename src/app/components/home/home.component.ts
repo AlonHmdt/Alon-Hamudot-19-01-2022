@@ -1,14 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {City} from "../../models/city.model";
-import * as CityForeCastActions from "../../actions/city-forecast.actions";
-import {Store} from "@ngrx/store";
-import {State} from "../../reducers/city-weather.reducer";
 
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: './home.component.html'
 })
 export class HomeComponent implements OnInit {
 

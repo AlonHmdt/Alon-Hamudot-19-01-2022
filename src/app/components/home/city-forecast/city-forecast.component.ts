@@ -8,7 +8,7 @@ import * as CityForeCastActions from '../../../actions/city-forecast.actions';
 @Component({
   selector: 'app-city-forecast',
   templateUrl: './city-forecast.component.html',
-  styleUrls: ['./city-forecast.component.css']
+  styleUrls: ['./city-forecast.component.scss']
 })
 export class CityForecastComponent implements OnInit, OnDestroy {
   cityWeatherCard: CityWeatherCard;
