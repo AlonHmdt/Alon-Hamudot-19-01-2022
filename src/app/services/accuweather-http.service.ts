@@ -15,8 +15,7 @@ import {CityWeatherCard} from '../models/city-weather-card.model';
 })
 export class AccuweatherHttpService {
   readonly url = 'https://dataservice.accuweather.com';
-  // readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA'; //first
-  readonly apiKey = 'aAzBLQb54i8UeWQIxdE6V0l0WhAeGlDG'; //second
+  readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA';
 
   constructor(private http: HttpClient) {
   }
