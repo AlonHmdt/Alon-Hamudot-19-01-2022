@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.store.dispatch(new CityForeCastActions.FetchCityForecast(this.initialCity));
+    this.store.dispatch(new CityForeCastActions.FetchCityForecast(this.initialCity));
 
     this.store.select('cityWeatherReducer').subscribe(state => {
       this.isLoading = state.loading;
