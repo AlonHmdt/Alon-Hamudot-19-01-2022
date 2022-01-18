@@ -13,7 +13,7 @@ import * as CityForeCastActions from '../actions/city-forecast.actions';
   providedIn: 'root'
 })
 export class AccuweatherHttpService {
-  readonly url = 'http://dataservice.accuweather.com';
+  readonly url = 'https://dataservice.accuweather.com';
   // readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA'; //first
   readonly apiKey = 'aAzBLQb54i8UeWQIxdE6V0l0WhAeGlDG'; //second
 

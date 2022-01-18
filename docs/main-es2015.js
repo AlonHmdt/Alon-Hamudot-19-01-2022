@@ -576,7 +576,7 @@ __webpack_require__.r(__webpack_exports__);
 class AccuweatherHttpService {
     constructor(http) {
         this.http = http;
-        this.url = 'http://dataservice.accuweather.com';
+        this.url = 'https://dataservice.accuweather.com';
         // readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA'; //first
         this.apiKey = 'aAzBLQb54i8UeWQIxdE6V0l0WhAeGlDG'; //second
     }

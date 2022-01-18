@@ -1174,7 +1174,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, AccuweatherHttpService);
 
         this.http = http;
-        this.url = 'http://dataservice.accuweather.com'; // readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA'; //first
+        this.url = 'https://dataservice.accuweather.com'; // readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA'; //first
 
         this.apiKey = 'aAzBLQb54i8UeWQIxdE6V0l0WhAeGlDG'; //second
       }
