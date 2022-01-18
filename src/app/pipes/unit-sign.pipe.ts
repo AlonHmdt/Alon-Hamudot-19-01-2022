@@ -5,6 +5,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 
 export class UnitSignPipe implements PipeTransform {
+
   transform(temperature: string): string {
     return temperature + '°C';
   }

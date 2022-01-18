@@ -39,7 +39,6 @@ export class RemoveCityToFavourites implements Action {
 }
 
 
-
 export type CityForecastActionsActions =
   ShowCityForecast |
   FetchCityForecast |

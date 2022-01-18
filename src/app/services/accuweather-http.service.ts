@@ -54,7 +54,7 @@ export class AccuweatherHttpService {
 
     const params = {
       apikey: this.apiKey,
-      metric: 'true'
+      metric: 'true',
     };
 
     return this.http.get(this.url + '/forecasts/v1/daily/5day/' + cityCode, {params})

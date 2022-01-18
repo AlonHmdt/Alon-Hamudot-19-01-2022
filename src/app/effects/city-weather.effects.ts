@@ -1,10 +1,9 @@
 import {Actions, Effect, ofType} from '@ngrx/effects';
-import * as CityForecastActions from '../actions/city-forecast.actions';
-import { switchMap, tap} from 'rxjs/operators';
-import {AccuweatherHttpService} from '../services/accuweather-http.service';
+import {Router} from '@angular/router';
+import {switchMap, tap} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
-
-import {Router} from "@angular/router";
+import {AccuweatherHttpService} from '../services/accuweather-http.service';
+import * as CityForecastActions from '../actions/city-forecast.actions';
 
 @Injectable()
 export class CityWeatherEffects {
@@ -23,8 +22,7 @@ export class CityWeatherEffects {
     tap(() => {
         this.router.navigate(['home', 'forecast']);
       }
-    ))
-
-  constructor(private actions$: Actions, private accuweatherHttpService: AccuweatherHttpService, private router: Router) {
+    ));
+    constructor(private actions$: Actions, private accuweatherHttpService: AccuweatherHttpService, private router: Router) {
   }
 }

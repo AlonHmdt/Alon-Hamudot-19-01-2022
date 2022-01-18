@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {forkJoin, Observable, Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
+import {Store} from '@ngrx/store';
+import {ActivatedRoute, Router} from '@angular/router';
 import {distinctUntilChanged, switchMap} from 'rxjs/operators';
 import {AccuweatherHttpService} from '../../../services/accuweather-http.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Store} from '@ngrx/store';
 import * as CityForeCastActions from '../../../actions/city-forecast.actions';
 import {City} from '../../../models/city.model';
-import {State} from "../../../reducers/city-weather.reducer";
+import {State} from '../../../reducers/city-weather.reducer';
 
 @Component({
   selector: 'app-search-bar',
@@ -186,7 +186,6 @@ export class SearchBarComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.citiesList$ = this.subject.pipe(
       distinctUntilChanged(),
       switchMap(keyword => {
