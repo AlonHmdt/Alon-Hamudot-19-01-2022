@@ -7,9 +7,13 @@
   width: 150px;
 }
 
-
 .icon-display {
   transform: scale(1.5);
 }
 
-
+.app-card {
+  word-wrap: break-word;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 0.25rem;
+}

@@ -1,11 +1,11 @@
 export class CityForecast {
-  Headline: object;
+  Headline: { Text: string };
   DailyForecasts: DailyCityForecast[];
 }
 
 class DailyCityForecast {
   Date: string;
-  Temperature: object;
+  Temperature: { Maximum: {Value: string} , Minimum: {Value: string}};
 }
 
 

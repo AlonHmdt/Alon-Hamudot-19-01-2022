@@ -1,27 +1,25 @@
 <mat-card>
   <div class="d-flex justify-content-between">
     <div>
-      <p class="h5">{{cityWeatherCard.CityName}}</p>
-      <p class="h5">{{cityWeatherCard.Current.Temperature['Metric']['Value'] | unitSign}}</p>
-    </div>
-    <div class="d-flex flex-column align-items-center">
-      <img class="icon"
-           src="https://developer.accuweather.com/sites/default/files/{{cityWeatherCard.Current.WeatherIcon | zeroPad: 2}}-s.png">
-      <p class="h1 text-center">{{cityWeatherCard.Current.WeatherText}}</p>
+      <p class="h5 m-0">{{cityWeatherCard.CityName}} - {{cityWeatherCard.Current.Temperature.Metric.Value | unitSign}}</p>
     </div>
     <div class="pointer" >
       <mat-icon class="icon-display" (click)="toggleFavorite()" *ngIf="!isFav">favorite_border</mat-icon>
       <mat-icon class="text-danger icon-display" (click)="toggleFavorite()" *ngIf="isFav">favorite</mat-icon>
     </div>
   </div>
-  <mat-card-content class="mt-2">
-    <div>
+  <mat-card-content>
+    <div class="d-flex flex-column align-items-center">
+      <img class="icon"
+           src="https://developer.accuweather.com/sites/default/files/{{cityWeatherCard.Current.WeatherIcon | zeroPad: 2}}-s.png">
+      <p class="h1 text-center">{{cityWeatherCard.Current.WeatherText}}</p>
+      <p class="h4 text-center">{{cityWeatherCard.Forecast.Headline.Text}}</p>
       <div class="d-flex flex-wrap flex-lg-nowrap justify-content-center">
-        <div class="mx-2" *ngFor="let forecast of cityWeatherCard.Forecast.DailyForecasts">
+        <div class="m-2 app-card" *ngFor="let forecast of cityWeatherCard.Forecast.DailyForecasts">
           <div class="card-body">
             <p class="">{{forecast.Date | date: 'EEEE, dd.MM'}}</p>
-            <p class="font-weight-bold">{{forecast.Temperature['Minimum']['Value']| unitSign}}
-              - {{forecast.Temperature['Maximum']['Value']| unitSign}}</p>
+            <p class="font-weight-bold">{{forecast.Temperature.Minimum.Value| unitSign}}
+              - {{forecast.Temperature.Maximum.Value| unitSign}}</p>
           </div>
         </div>
       </div>
