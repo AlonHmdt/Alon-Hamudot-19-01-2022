@@ -7951,7 +7951,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       selectors: [["app-search-bar"]],
       decls: 11,
       vars: 4,
-      consts: [[1, "w-100", "d-flex", "justify-content-center"], ["appearance", "outline", 1, "my-2", "w-75"], ["matPrefix", ""], ["type", "text", "placeholder", "Type city name", "matInput", "", 3, "matAutocomplete", "keyup"], ["autoActiveFirstOption", ""], ["auto", "matAutocomplete"], [3, "value", "click", 4, "ngFor", "ngForOf"], [3, "value", "click"]],
+      consts: [[1, "w-100", "d-flex", "justify-content-center"], ["appearance", "outline", 1, "my-2", "w-75"], ["matPrefix", ""], ["type", "text", "oninput", "this.value=this.value.replace(/[^A-Za-z\\s]/g,'')", "placeholder", "Type city name", "matInput", "", 3, "matAutocomplete", "keyup"], ["autoActiveFirstOption", ""], ["auto", "matAutocomplete"], [3, "value", "click", 4, "ngFor", "ngForOf"], [3, "value", "click"]],
       template: function SearchBarComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
