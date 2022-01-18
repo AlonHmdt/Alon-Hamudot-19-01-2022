@@ -1,18 +1,19 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {forkJoin, Observable, of} from 'rxjs';
-import {catchError, map} from 'rxjs/operators';
+import {forkJoin, from, Observable, of} from 'rxjs';
+import {catchError, map, mergeMap} from 'rxjs/operators';
 import {City} from '../models/city.model';
 import {CityForecast} from '../models/city-forecast.model';
 import {CityCurrentWeather} from '../models/city-current-weather.model';
 import {CityWeatherCard} from '../models/city-weather-card.model';
 import * as CityForeCastActions from '../actions/city-forecast.actions';
+import {FetchCityForecastFail} from '../actions/city-forecast.actions';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AccuweatherHttpService {
-  readonly url = 'http://dataservice.accuweather.com';
+  readonly url = 'https://dataservice.accuweather.com';
   readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA';
 
   constructor(private http: HttpClient) {
@@ -37,7 +38,7 @@ export class AccuweatherHttpService {
       apikey: this.apiKey
     };
 
-    return this.http.get(this.url + '/currentconditions/v1/' + cityCode, {params})
+    return this.http.get(this.url + '/currentconditions/v1/' + cityCode,  {params})
       .pipe(
         map((response: any) => {
           const cityCurrentWeather = new CityCurrentWeather();

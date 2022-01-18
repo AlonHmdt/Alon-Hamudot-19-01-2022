@@ -3,7 +3,6 @@ import {Store} from '@ngrx/store';
 import {State} from './reducers/city-weather.reducer';
 import {City} from './models/city.model';
 import * as CityForeCastActions from './actions/city-forecast.actions';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
