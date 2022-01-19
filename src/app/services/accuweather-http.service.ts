@@ -16,7 +16,8 @@ import * as CityForecastActions from '../actions/city-forecast.actions';
 })
 export class AccuweatherHttpService {
   readonly url = 'https://dataservice.accuweather.com';
-  readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA';
+  // readonly apiKey = 'kIAOQIguhCOciKN0htm5SlhS1TkCqlXA'; //old key
+  readonly apiKey = 'nfaSDROW36aeCGXRfQjOkRY65IEteI8L';
 
   constructor(private http: HttpClient) {
   }
